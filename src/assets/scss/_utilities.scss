@@ -1,0 +1,63 @@
+@import './variable';
+
+.btn {
+    font-size: 14px;
+    color: #fff;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    transition: transform 400ms ease, box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover{
+        @extend .shadow;
+    }
+    &:active{
+        transform: scale(.98);
+    }
+    &.btn-primary {
+        background-color: $accent-color;
+    }
+    
+    &.btn-gray {
+        background-color: $gray-color;
+    }
+    
+    &.btn-warn {
+        background-color: $warn-color;
+    }
+}
+
+.bg-primary {
+    background-color: $accent-color;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.border-radius-5{
+    border-radius: 5px;
+}
+
+
+
