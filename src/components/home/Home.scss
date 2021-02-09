@@ -1,0 +1,36 @@
+
+.home{
+    .intro{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        h1{
+            margin: 0;
+            font-size: 4.2em;
+            text-shadow: 1px 1px 6px;
+        }
+        p{
+            color: #333;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
+footer{
+    width: 100%;
+    text-align: center;
+    small{
+        color: gray;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
