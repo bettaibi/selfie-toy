@@ -8,6 +8,7 @@
 html, body{
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 html{
@@ -21,12 +22,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  overflow: hidden;
 }
 
 .main{
   height: calc(100vh - 50px);
   width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .home{
@@ -47,7 +49,7 @@ body {
   height: 100%;
   width: 100%;
   background-image: url(../bg.jpg);
-  padding: 1rem 1rem 2rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,6 +72,20 @@ body {
     width: 400px;
     height: 300px;
     transform: rotate(-3deg) translate(0px, 3px);
+    @media only screen and (max-width: 670px){
+     &{
+       width: 250px;
+       height: 200px;
+       .pic-desc{
+         h1{
+          font-size: 1.5em;
+         }
+         span{
+          font-size: 14px;
+         }
+       }
+     }
+    }
   }
 }
 
@@ -112,9 +128,26 @@ body {
       color: $warn-color;
     }
   }
+  @media only screen and (max-width: 670px){
+    &{
+      width: 75px;
+      height: 60px;
+      padding: .1rem;
+      margin: 0 .1rem;
+      .desc{
+        font-size: 11px;
+      }
+    }
+  }
 }
 
 .btn-group{
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 670px){
+  .sm-none{
+    display: none;
+  }
 }

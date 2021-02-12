@@ -8,7 +8,7 @@ const Home = () => {
     return (
     <div className="bg-secondary" style={{padding: '2rem 1rem', height: '100%', width: '100%'}}>
         <div className="home">
-            <div className="m-1">
+            <div className="m-1 sm-none">
                 <RandomCover width="260px" heigth="230px" rotation="rotate(35deg)" marginTop="100px"/>
             </div>
              
@@ -23,7 +23,7 @@ const Home = () => {
                      <Link to='/selfie'>Ready ?</Link>
                  </button>
             </div>
-             <div className="m-1">
+             <div className="m-1 sm-none">
                 <RandomCover  width="260px" heigth="230px" rotation="rotate(-35deg)" marginTop="10px"/>
                 <RandomCover  width="120px" heigth="150px" rotation="rotate(35deg)" marginTop="10px"/>
             </div>

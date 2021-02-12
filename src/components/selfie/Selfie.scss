@@ -1,4 +1,3 @@
-
 .selfie{
     .video-container{
         height: 100%;
@@ -36,6 +35,17 @@
                 filter: invert(1);
                 height: 30px;
             }
+        }
+
+        .counter{
+            position: absolute;
+            top: 24%;
+            font-size: 3.8em;
+            color: #e91e63;;
+            font-weight: 800;
+            left: 0;
+            width: 100%;
+            text-align: center;
         }
     }
 }

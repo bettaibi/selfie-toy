@@ -23,6 +23,17 @@
             font-size: 16px;
             font-weight: 600;
         }
+        @media only screen and (max-width: 670px){
+            h1{
+                font-size: 3em;
+            }
+            img{
+                height: 90px;
+            }
+            p{
+                font-size: 15px;
+            }
+        }
     }
 }
 footer{
@@ -31,6 +42,6 @@ footer{
     small{
         color: gray;
         font-weight: 600;
-        letter-spacing: 1px;
+        letter-spacing: 0.8px;
     }
 }

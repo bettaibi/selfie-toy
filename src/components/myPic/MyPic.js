@@ -2,7 +2,7 @@ import React from 'react'
 import defaultUser from './../../assets/default.jpg';
 import facebookIcon from './../../assets/icons/facebook.svg';
 import downloadIcon from './../../assets/icons/file_download.svg';
-
+import backIcon from './../../assets/icons/arrow_back.svg';
 import { useHistory } from 'react-router-dom';
 
 let myPic;
@@ -38,18 +38,20 @@ const MyPic = () => {
 
     return (
         <div className="pic-component">
-            <div style={{display:'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))'}}>
-                <div className="cover my-pic">
-                    <img src={myPic} alt="myPic"/>
+            <div>
+                <div className="cover my-pic fadeIn">
+                    <img src={myPic} alt="myPic" />
                 </div>
-                <div style={{color: 'rgb(212 212 212)', letterSpacing: '1px', marginTop:'1rem'}}>
+                <div className="pic-desc fadeIn" style={{color: 'rgb(212 212 212)', letterSpacing: '1px', marginTop:'1rem'}}>
                     <h1>Awesome pic!</h1>
                     <span>Save pictures in your computer or share them on Facebook</span>
                 </div>
             </div>
 
             <div className="w-100" style={{display: 'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-                <button onClick={goBack} className="btn btn-accent mr-5p">Go Back</button>
+                <button style={{width:'34px', height: '34px', borderRadius: '50%'}} onClick={goBack} className="btn btn-accent mr-5p flex-center shadow-sm">
+                   <img src={backIcon} style={{filter: 'invert(1)'}}/>
+                </button>
                 <div className="btn-group">
                     <button className="btn btn-facebook mr-5p" onClick={shareImage} style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
                         <img src={facebookIcon} alt="facebook" style={{filter:'invert(1)', marginRight:'0.3rem'}}/>

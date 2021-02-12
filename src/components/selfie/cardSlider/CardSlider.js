@@ -8,15 +8,18 @@ let filters =  [
     {title: 'sepia', value: 'sepia(100%)', active: false},
     {title: 'blur', value: 'blur(4px)', active: false},
     {title: 'saturate', value: 'saturate(2)', active: false},
-    {title: 'hue', value: 'hue-rotate(140deg)', active: false},
+    {title: 'hue', value: 'hue-rotate(90deg)', active: false},
     {title: 'brightness', value: 'brightness(.5)', active: false},
     {title: 'invert', value: 'invert(0.8)', active: false},
     {title: 'contrast', value: 'contrast(2)', active: false},
-    {title: 'hautContrast', value: 'contrast(200%)', active: false},
+    {title: 'hautContrast', value: 'contrast(3)', active: false},
     {title: 'combination', value: 'grayscale(0.5) blur(10px)', active: false},
     {title: 'mix', value: 'contrast(1.4) saturate(1.8) sepia(.6)', active: false},
     {title: 'opacity', value: 'opacity(.7)', active: false},
-    {title: 'mdc', value: 'contrast(25%)', active: false}
+    {title: 'mdc', value: 'contrast(25%)', active: false},
+    {title: 'tint', value: 'sepia(1) hue-rotate(200deg)', active: false},
+
+    {title: 'combo', value: 'contrast(1.4) saturate(1.8) sepia(.6)', active: false},
 ];
 let animationClass = '';
 
@@ -36,13 +39,13 @@ const CardSlider = ({stream, onFilterChanged}) => {
     const next = (e) =>{
         e.stopPropagation();
         if((currentIndex + 3) > filters.length) return;
-        else {animationClass = 'slideRight'; setCurrentIndex(prev => prev + 3)};
+        else {animationClass = 'slideLeft'; setCurrentIndex(prev => prev + 3)};
     }
 
     const previous = (e) =>{
         e.stopPropagation()
         if((currentIndex - 3) <= 0) setCurrentIndex(3);
-        else {animationClass = 'slideLeft'; setCurrentIndex(prev => prev - 3);};
+        else {animationClass = 'slideRight'; setCurrentIndex(prev => prev - 3);};
     }
 
     const onActiveChanged = (item) =>{
