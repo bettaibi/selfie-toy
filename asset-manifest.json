@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/selfie-toy/static/css/main.339e7003.chunk.css",
-    "main.js": "/selfie-toy/static/js/main.61f8046f.chunk.js",
-    "main.js.map": "/selfie-toy/static/js/main.61f8046f.chunk.js.map",
+    "main.js": "/selfie-toy/static/js/main.426ae2dd.chunk.js",
+    "main.js.map": "/selfie-toy/static/js/main.426ae2dd.chunk.js.map",
     "runtime-main.js": "/selfie-toy/static/js/runtime-main.4f7f8063.js",
     "runtime-main.js.map": "/selfie-toy/static/js/runtime-main.4f7f8063.js.map",
     "static/js/2.72905794.chunk.js": "/selfie-toy/static/js/2.72905794.chunk.js",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.4f7f8063.js",
     "static/js/2.72905794.chunk.js",
     "static/css/main.339e7003.chunk.css",
-    "static/js/main.61f8046f.chunk.js"
+    "static/js/main.426ae2dd.chunk.js"
   ]
 }
