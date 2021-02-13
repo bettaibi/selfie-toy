@@ -4,30 +4,24 @@ import Selfie from './components/selfie/Selfie';
 import MyPic from './components/myPic/MyPic';
 
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route
 } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename='/'>
       <Header />
 
       <main className="main">
         <Switch>
-          <Route path="/" exact>
-             <Home />
-          </Route>
-          <Route path="/selfie">
-             <Selfie />
-          </Route>
-          <Route path="/my-pic">
-            <MyPic />
-          </Route>
+          <Route path="/" exact component={Home} />
+          <Route path="/selfie" component={Selfie} />
+          <Route path="/my-pic" component={MyPic} />
         </Switch>
       </main>
-    </Router>
+    </HashRouter>
   );
 }
 

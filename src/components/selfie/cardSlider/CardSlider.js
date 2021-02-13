@@ -1,4 +1,4 @@
-import {useRef, useEffect, useState} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import chevronLeft from '../../../assets/icons/chevron_left.svg';
 import chevronRight from '../../../assets/icons/chevron_right.svg';
 
@@ -55,7 +55,7 @@ const CardSlider = ({stream, onFilterChanged}) => {
     }
 
     return (
-        <>
+        <React.Fragment>
             <button className="btn btn-accent rounded-icon shadow-sm" style={{marginRight: '0.6rem'}}
             onClick={previous}>
                 <img src={chevronLeft} alt="previous"/>
@@ -73,7 +73,7 @@ const CardSlider = ({stream, onFilterChanged}) => {
             onClick={next}>
                 <img src={chevronRight} alt="next"/>
             </button>
-        </>
+        </React.Fragment>
     )
 }
 

@@ -50,7 +50,7 @@ const MyPic = () => {
 
             <div className="w-100" style={{display: 'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
                 <button style={{width:'34px', height: '34px', borderRadius: '50%'}} onClick={goBack} className="btn btn-accent mr-5p flex-center shadow-sm">
-                   <img src={backIcon} style={{filter: 'invert(1)'}}/>
+                   <img src={backIcon} style={{filter: 'invert(1)', objectFit:'cover'}}/>
                 </button>
                 <div className="btn-group">
                     <button className="btn btn-facebook mr-5p" onClick={shareImage} style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
