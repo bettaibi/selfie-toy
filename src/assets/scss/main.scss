@@ -49,7 +49,6 @@ body {
   height: 100%;
   width: 100%;
   background-image: url(../bg.jpg);
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,25 +67,25 @@ body {
     height: 100%;
     object-fit: cover;
   }
-  &.my-pic{
-    width: 400px;
-    height: 300px;
-    transform: rotate(-3deg) translate(0px, 3px);
-    @media only screen and (max-width: 670px){
-     &{
-       width: 250px;
-       height: 200px;
-       .pic-desc{
-         h1{
-          font-size: 1.5em;
-         }
-         span{
-          font-size: 14px;
-         }
-       }
-     }
-    }
-  }
+  // &.my-pic{
+  //   width: 400px;
+  //   height: 300px;
+  //   transform: rotate(-3deg) translate(0px, 3px);
+  //   @media only screen and (max-width: 670px){
+  //    &{
+  //      width: 250px;
+  //      height: 200px;
+  //      .pic-desc{
+  //        h1{
+  //         font-size: 1.5em;
+  //        }
+  //        span{
+  //         font-size: 14px;
+  //        }
+  //      }
+  //    }
+  //   }
+  // }
 }
 
 .options{

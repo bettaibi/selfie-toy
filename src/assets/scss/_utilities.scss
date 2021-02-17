@@ -32,15 +32,15 @@
     &:active{
         transform: scale(.98);
     }
-    &.btn-accent {
-        background-color: $accent-color;
-    }
-    &.btn-primary {
-        background-color: $primary-color;
-    }
-    &.btn-facebook{
-        background-color: #4267b2;
-    }
+}
+.btn.btn-accent, .btn-icon.btn-accent {
+    background-color: $accent-color;
+}
+.btn.btn-primary, .btn-icon.btn-primary {
+    background-color: $primary-color;
+}
+.btn.btn-facebook, .btn-icon.btn-facebook {
+    background-color: #4267b2;
 }
 
 .text-accent {
@@ -82,12 +82,9 @@
     }
     @media only screen and (max-width: 670px){
       &{
-        width: 31px !important;
-        min-width: 31px !important;
-        height: 31px !important;
-        img{
-            height: 21px;
-        }
+        width: 35px !important;
+        min-width: 35px !important;
+        height: 35px !important;
         &:first-child{
             margin-right: 0.4rem !important;
         }
@@ -118,6 +115,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+[data-tooltip]{
+    position: relative;
+    &::before{
+        content: attr(data-tooltip);
+        position: absolute;
+        background: #222;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -55px;
+        min-width: 110px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        opacity: 0;
+        padding: 0.5rem;
+        transition: opacity 300ms ease-in;
+        z-index: 9999;
+    }
+
+    &:hover{
+        &::before{
+            opacity: 1;
+        }
+    }
 }
 
 

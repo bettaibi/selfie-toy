@@ -1,0 +1,6 @@
+
+@mixin mediaSm {
+    @media only screen and (max-width: 670px){
+        @content;
+    }
+}

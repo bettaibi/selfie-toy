@@ -11,13 +11,12 @@ const Selfie = () => {
     let stream = null;
     const [videoStream, setVideoStream] = useState(null);
     const [filter, setFilter] = useState('none');
-    let [counter, setCounter] = useState(4);
+    const loaderRef = useRef();
 
     const videoRef = useRef();
     const canvasRef = useRef();
-    console.log("inside the component")
+
     useEffect(() => {
-        console.log("inside effect")
         loadMedia();
 
         return () => {
@@ -57,17 +56,14 @@ const Selfie = () => {
         ctx.filter = filter;
         const snap = new Audio(audioSnap);
 
-        var intervalId = setInterval(()=>{
-
-            if(counter < 1){
-                clearInterval(intervalId);
-                snap.play();
-                ctx.drawImage(videoRef.current, 0, 0, 500, height);
-                sessionStorage.setItem('pic', canvasRef.current.toDataURL("image/png"));
-                history.push('/my-pic');
-            }
-            setCounter(counter--);
-        },800);
+        loaderRef.current.style= "display: block";
+        setTimeout(()=>{
+            snap.play();
+            ctx.drawImage(videoRef.current, 0, 0, 500, height);
+            sessionStorage.setItem('pic', canvasRef.current.toDataURL("image/png"));
+            loaderRef.current.style= "display: none";
+            history.push('/my-pic');
+        },1000);
 
     }
 
@@ -86,7 +82,7 @@ const Selfie = () => {
              <button className="snapshot btn btn-accent shadow" onClick={takeSnap}>
                  <img src={camera} alt="camera"/>
              </button>
-             <h4 className="counter" style={{display: counter==4?'none':'block'}}>{counter}</h4>
+             <div className="counter" ref={loaderRef} style={{display:'none'}}></div>
             </div>
         </div>
     )

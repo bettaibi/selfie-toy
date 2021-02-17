@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import defaultUser from './../../assets/default.jpg';
 import facebookIcon from './../../assets/icons/facebook.svg';
 import downloadIcon from './../../assets/icons/file_download.svg';
 import backIcon from './../../assets/icons/arrow_back.svg';
+import deleteIcon from './../../assets/icons/delete.svg';
+import cropIcon from './../../assets/icons/crop.svg';
+import rotateIcon from './../../assets/icons/rotate.svg';
+import zoomInIcon from './../../assets/icons/zoom_in.svg';
+import zoomOutIcon from './../../assets/icons/zoom_out.svg';
+import './MyPic.scss';
 import { useHistory } from 'react-router-dom';
+import CropperImage from './CropperImage';
 
 let myPic;
 
 const MyPic = () => {
     const history = useHistory();
+    let cropper;
+
     let uri;
     if(sessionStorage.getItem('pic')){
         myPic = sessionStorage.getItem('pic');
@@ -36,31 +45,44 @@ const MyPic = () => {
         window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent('my-pic'),'sharer','toolbar=0,status=0,width=626,height=436');return false;
     };
 
+    const cropImg = (e) =>{
+        console.log(cropper)
+        e.preventDefault();
+    }
+
     return (
         <div className="pic-component">
-            <div>
-                <div className="cover my-pic fadeIn">
-                    <img src={myPic} alt="myPic" />
-                </div>
-                <div className="pic-desc fadeIn" style={{color: 'rgb(212 212 212)', letterSpacing: '1px', marginTop:'1rem'}}>
-                    <h1>Awesome pic!</h1>
-                    <span>Save pictures in your computer or share them on Facebook</span>
-                </div>
+            <div className="img-container">
+                <CropperImage  originalPic= {myPic} cropper= {cropper}/>
             </div>
-
-            <div className="w-100" style={{display: 'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-                <button style={{width:'34px', height: '34px', borderRadius: '50%'}} onClick={goBack} className="btn btn-accent mr-5p flex-center shadow-sm">
-                   <img src={backIcon} style={{filter: 'invert(1)', objectFit:'cover'}}/>
-                </button>
-                <div className="btn-group">
-                    <button className="btn btn-facebook mr-5p" onClick={shareImage} style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+            <div className="bottom-toolbar">
+               <button  data-tooltip="Go back" onClick={goBack} className="btn-icon btn-accent mr-5p flex-center shadow-sm">
+                 <img src={backIcon} style={{filter: 'invert(1)', objectFit:'cover'}}/>
+               </button>
+               <div className="cropper-options">
+                   <button  data-tooltip="Clear All" className="btn-icon">
+                       <img src={deleteIcon} alt="delete_icon"/>
+                   </button>
+                   <button className="btn-icon"  data-tooltip="Crop"
+                   onClick={cropImg}>
+                       <img src={cropIcon} alt="crop_icon"/>
+                   </button>
+                   <button className="btn-icon"  data-tooltip="Rotate">
+                       <img src={rotateIcon} alt="rotate_icon"/>
+                   </button>
+                   <button className="btn-icon" data-tooltip="Zoom In">
+                       <img src={zoomInIcon} alt="zoomIn_icon"/>
+                   </button>
+                   <button className="btn-icon"  data-tooltip="Zoom Out">
+                       <img src={zoomOutIcon} alt="zoomOut_icon"/>
+                   </button>
+               </div>
+               <div className="btn-group">
+                    <button data-tooltip="Share" className="btn-icon btn-facebook" onClick={shareImage}>
                         <img src={facebookIcon} alt="facebook" style={{filter:'invert(1)', marginRight:'0.3rem'}}/>
-                        <span>Share</span>
                     </button>
-                    <button className="btn btn-accent" onClick={download}
-                    style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                    <button data-tooltip="Download" className="btn-icon btn-accent" onClick={download}>
                         <img src={downloadIcon} alt="download" style={{filter:'invert(1)', marginRight:'0.3rem'}}/>
-                       Download
                     </button>
                 </div>
             </div>
